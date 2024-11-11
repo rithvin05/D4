@@ -1,0 +1,345 @@
+/* General container styling with a vertical layout */
+.content {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
+
+/* Styles for the main header*/
+.mainHeader {
+    /* Keeps header fixed at the top */
+    position: sticky; 
+    top: 0; 
+    width: 100%; 
+    z-index: 1000; /* Ensures it appears above other elements */
+
+
+    border-radius: 30px;
+    padding: 20px; 
+
+    /* changing text and background color */
+    background-color: #143763; 
+    color: #ffffff;
+    text-align: center; 
+}
+
+/* Styles for the list container within the page layout */
+#meetList {
+    /* Centers list items vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+/* Header styling with centered text and background color */
+h2 {
+    text-align: center;
+    color: white;
+    background-color: #143763;
+    width: 100%;
+}
+
+
+/* Table IDs with consistent width and padding */
+
+
+/* Layout for scrollable containers, flexible width, and wrapping */
+#MeetScroll, #photos, #athlete-results {
+    width: 100%;
+    max-height: 75vh; /* Limits container height */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+    overflow-y: scroll; /* Adds vertical scrolling */
+    justify-content: space-evenly; /* Even spacing between items */
+}
+
+#binaryRoster{
+    width: 100%;
+    max-height: 75vh; /* Limits container height */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; /* Allows items to wrap onto multiple lines */
+    overflow-y: scroll; /* Adds vertical scrolling */
+    justify-content: space-evenly; /* Even spacing between items */
+    text-align: center;
+}
+
+#meet-table, #photo-table, #women-table, #men-table, #athlete-table {
+    width: 100%; 
+    padding: 10px; 
+    
+}
+
+
+/* Table styling*/
+table {
+    border-collapse: collapse; /* Removes extra spacing between cells */
+    background-color: #fff; /* White background */
+    border-radius: 10px; /* Rounds table edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Shared cell and header styling for padding, borders, and color */
+th, td {
+    padding: 10px; 
+    text-align: center; 
+    border-bottom: 1px solid #ddd; 
+}
+
+/* Table Header cell styling*/
+th {
+    background-color: #2565b3; /* Blue background */
+    color: #fff; /* White text */
+    border-radius: 15px 15px 0 0; /* Rounds top corners */
+    font-weight: bold;
+}
+
+/* Alternating row color for readability */
+tr:nth-child(even) {
+    background-color: #9bbeea39; 
+}
+
+/* Link and cell styling*/
+a, td {
+    color: #2565b3; /* Blue text color */
+    text-decoration: none; /* No underline for links */
+    font-weight: bold; /* Bold font */
+    transition: font-size 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth scaling transition*/
+}
+
+/* Link styling on hover and focus */
+a:hover, a:focus, td:focus {
+    color: #00274c; /* Dark blue text color  */
+    font-size: 1.2em; /* Slightly increases size */
+    border: 2px solid #00274c; /* Adds border */
+}
+
+/* Optional focus outline and background color change */
+binaryRoster:focus {
+    outline: 2px solid #2565b3; 
+    background-color: #676c71; 
+}
+
+/* Button styling  */
+#homeButton {
+    margin-left: auto; /* Aligns button to the right */
+    border-radius: 15px; /* Rounds corners */
+    padding: 10px; /* Space inside button */
+
+    background-color: white; /* Default background */
+
+    color: black; /* Default text color */
+    cursor: pointer; /* Pointer cursor on hover */
+
+    transition: background-color 0.5s ease-in-out,
+        color 0.3s ease-in-out,
+        width 0.5s ease-in-out,
+        height 0.5s ease-in-out; /*  color and size transition */
+}
+
+/* Button styling on hover */
+#homeButton:hover, #homeButton:focus {
+    background-color: #132f82; /* Dark blue background */
+    color: white; /* White text color */
+    /* Increases width and height */
+    width: 200px; 
+    height: 200px; 
+}
+
+/* Container styling for athlete results */
+#athlete-results {
+    width: 100%;
+    border-collapse: collapse; /* Removes space between cells */
+}
+
+
+
+/* List container styling with no wrapping */
+#meetList {
+    display: flex;
+    flex-direction: column;
+}
+
+.photo-grid {
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    grid-template-columns: repeat(1, 0.75fr); /* 3 equal-width columns */
+    gap: 10px; /* Space between the grid items */
+    padding: 10px; /* Optional padding around the grid */
+}
+/* Image size adjustments for photoList class */
+
+.photoList {
+    
+    width: 100%; /* Makes each image responsive within its grid cell */
+    border-radius: 10px; /* Optional: rounds image corners */
+    object-fit: cover; /* Ensures image covers the grid cell without distortion */
+}
+
+.athleteImages {/*resizes profile pictures */
+    width: 60px; 
+    height: auto;
+}
+
+.lb-data .lb-number {
+    font-size: 26px; /* Increases the font size of the image number */
+}
+
+/* Adjusts layout for table screens */
+@media (min-width: 700px) { 
+    .photo-grid {
+        grid-template-columns: repeat(2, 0.4fr); 
+        /* 2 equal-width columns */
+    }
+    .mainHeader {
+        height: 20vh; /* 20% height for the header */
+        /* font-size: 1em; Increases font size */
+        font-size: 1.3em;
+        align-content: center;
+    }
+    
+    h2, h3 {
+        height: 7vh;
+        font-size: 3em;
+        align-content: center;
+    }
+    p, table{
+        font-size: 1.5em;
+    }
+    .athleteImages {
+        width: 200px; /* Makes each image responsive within its grid cell */
+    }
+    #binaryRoster{
+        width: 100%;
+        max-height: 75vh; /* Limits container height */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+        overflow-y: scroll; /* Adds vertical scrolling */
+        justify-content: space-evenly; /* Even spacing between items */
+    }
+}
+
+/* Adjusts layout for Desktop screens */
+@media (min-width: 1024px) {
+    .photo-grid {
+        grid-template-columns: repeat(4, 0.25fr); 
+        /*4 equal-width columns */
+    }
+    .mainHeader {
+        height: 25vh; /* 15% height for the header */
+        font-size: 1.4em; /* Increases font size */
+    }
+    h1{
+        margin: 10px;
+    }
+    h2, h3 {
+        height: 5vh;
+        font-size:2em;
+    }
+    h3{
+        margin: 0px;
+        padding:10px;
+        padding-bottom: 30px;
+    }
+    p, table{
+        font-size: 1em;
+    }
+    #women, #men{
+        padding : 15px;
+    }
+    main {
+        display: flex;
+        flex-direction: row; /* Stack children vertically */
+        flex-wrap: wrap; /* Allows items to wrap onto multiple lines */
+        justify-content: space-evenly;
+        align-items: start;
+    }
+    #meetList, #Roster {
+        width: 40%;
+    }
+    #women, #men {
+        width: 40%;
+    }
+    .athleteImages {
+        width: 150px; /* Makes each image responsive within its grid cell */
+    }
+    
+    td{
+        font-size: 1.5em;
+    }
+
+}
+
+/* Dark mode adjustments*/
+@media (prefers-color-scheme: dark) {
+   
+    .mainHeader, h2, th {
+        background-color: #225a9e; /* Darker blue for headers */
+    }
+    
+    #meet-table, #photo-table #women-table, #men-table, #athlete-table, #homeButton, table, td, .bodyClass {
+        background-color: black; /* Black background for tables and various backgrounds*/
+    }
+    a, td, #homeButton, p, h3 {
+        color: white; /* White text for links and cells, homebutton, etc. */
+    }
+  
+    a:hover, a:focus, td:focus {
+        color: white;
+        font-size: 1.2em;
+        border: 2px solid white; /* White border on hover */
+    }
+}
+
+/* Reduced motion adjustments */
+@media (prefers-reduced-motion: reduce) {
+    #homeButton,
+    a,
+    td {
+        transition: none; /* Disables all transitions */
+    }
+
+    #homeButton:hover,
+    a:hover,
+    a:focus,
+    td:hover,
+    td:focus {
+        transition: none; /* Disables hover/focus transitions */
+        font-size: inherit; /* Resets font size */
+    }
+
+    a:hover, a:focus { 
+        border: none; /* Removes border on hover */
+        text-decoration: underline;
+    }
+
+    /* Disable transitions and animations for all lightbox elements */
+    .lightbox, 
+    .lb-outerContainer, 
+    .lb-nav a.lb-prev, 
+    .lb-nav a.lb-next, 
+    .lb-data .lb-close, 
+    .lb-nav a.lb-prev:hover,
+    .lb-nav a.lb-next:hover, 
+    .lb-data .lb-close:hover, 
+    .lb-image,  
+    .lb-prev, 
+    .lb-next, 
+    .lb-close, 
+    .lightboxOverlay {
+        transition: none !important;
+        animation: none !important;
+        opacity: 1 !important;
+        filter: none !important;
+        background-color: transparent;
+    }
+
+    .lightbox, 
+    .lightboxOverlay, 
+    .lb-outerContainer, 
+    .lb-image {
+        background-color: rgba(20, 14, 14, 0.5);
+    }
+}
